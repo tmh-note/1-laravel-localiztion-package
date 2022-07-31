@@ -11,7 +11,8 @@ Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home')->middleware('auth');
 Route::get('users', function() {
-    $users = User::paginate(10);
+    session(['msg' => 'world']);
+    $users = User::latest('id')->get();
 
     return view('users.index', compact('users'));
-});
+})->middleware('auth');
