@@ -1,0 +1,16 @@
+time()
+User::first()
+User::all()
+$arr = collect([1, 2, 3]);
+
+$arr->filter(fn($i) => $i > 2)->dd();
+$arr = collect([1, 2, 3]);
+
+$arr = $arr->filter(fn($i) => $i > 2);
+
+$arr;
+$arr = collect([1, 2, 3]);
+
+$arr = $arr->filter(fn($i) => $i > 1);
+
+$arr;
